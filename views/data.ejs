@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title>Database</title>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Employee Data</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:3000/view">Employee List</a>
+      </li>
+    
+    </ul>
+   
+  </div>
+</nav>
+	<div style="margin:0 auto;text-align: center;font-size:26px ;font-weight: bold;">List of Employee</div>
+   <div class="container-mx m-1 "> 
+   <table class="table table-striped ">
+  <thead>
+    <tr>
+      <th scope="col">Employee ID</th>
+      <th scope="col">Employee Name</th>
+      <th scope="col">Employee Email</th>
+      <th scope="col">Joined Date</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Phone No</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
+  <% data.forEach((e)=>{   %>
+  <tbody>
+    <tr>
+      <td ><%- e.id %></td>
+      <td ><%- e.name %></td>
+      <td ><%- e.email %></td>
+      <td ><%- e.joinDate %></td>
+      <td ><%- e.designation %></td>
+      <td ><%- e.phoneNo %></td>
+      <td ><%- e. Salary %></td>
+      <td >
+      <a href="http://localhost:3000/edit/<%- e.id %>" class="btn btn-primary btn-sm">Edit<a>
+      <a class="btn btn-danger btn-sm" href="http://localhost:3000/delete/<%- e.id %>">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+  <% }) %>
+</table>
+</div>
+</body>
+</html>
